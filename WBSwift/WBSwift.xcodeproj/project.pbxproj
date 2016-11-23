@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043D8DBF1DE5DA7B004E7899 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D8DBE1DE5DA7B004E7899 /* BaseTableViewController.swift */; };
+		043D8DC21DE5E235004E7899 /* VistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D8DC11DE5E235004E7899 /* VistorView.swift */; };
+		043D8DC41DE5E24A004E7899 /* VistorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043D8DC31DE5E24A004E7899 /* VistorView.xib */; };
+		043D8DC61DE5E489004E7899 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D8DC51DE5E489004E7899 /* HomeViewController.swift */; };
 		045A5E061DE5B9CA00054F57 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E051DE5B9CA00054F57 /* Null.storyboard */; };
 		045A5E081DE5B9DB00054F57 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E071DE5B9DB00054F57 /* Home.storyboard */; };
 		045A5E0A1DE5B9EA00054F57 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E091DE5B9EA00054F57 /* Message.storyboard */; };
@@ -17,9 +21,7 @@
 		04D55E611DE564FE006113EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E601DE564FE006113EC /* Assets.xcassets */; };
 		04D55E641DE564FE006113EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E621DE564FE006113EC /* LaunchScreen.storyboard */; };
 		04D55E721DE598E8006113EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E711DE598E8006113EC /* MainViewController.swift */; };
-		04D55E741DE59975006113EC /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E731DE59975006113EC /* BaseTableViewController.swift */; };
 		04D55E761DE5998F006113EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E751DE5998F006113EC /* BaseViewController.swift */; };
-		04D55E781DE599D9006113EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E771DE599D9006113EC /* HomeViewController.swift */; };
 		04D55E7A1DE599F1006113EC /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E791DE599F1006113EC /* MessageViewController.swift */; };
 		04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E7B1DE599FE006113EC /* DiscoverViewController.swift */; };
 		04D55E7E1DE59A09006113EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E7D1DE59A09006113EC /* ProfileViewController.swift */; };
@@ -27,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043D8DBE1DE5DA7B004E7899 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		043D8DC11DE5E235004E7899 /* VistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorView.swift; sourceTree = "<group>"; };
+		043D8DC31DE5E24A004E7899 /* VistorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VistorView.xib; sourceTree = "<group>"; };
+		043D8DC51DE5E489004E7899 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		045A5E051DE5B9CA00054F57 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Null.storyboard; sourceTree = "<group>"; };
 		045A5E071DE5B9DB00054F57 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		045A5E091DE5B9EA00054F57 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
@@ -39,9 +45,7 @@
 		04D55E631DE564FE006113EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D55E651DE564FE006113EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D55E711DE598E8006113EC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		04D55E731DE59975006113EC /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		04D55E751DE5998F006113EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		04D55E771DE599D9006113EC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04D55E791DE599F1006113EC /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		04D55E7B1DE599FE006113EC /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		04D55E7D1DE59A09006113EC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043D8DC01DE5E1B4004E7899 /* Vistor */ = {
+			isa = PBXGroup;
+			children = (
+				043D8DC11DE5E235004E7899 /* VistorView.swift */,
+				043D8DC31DE5E24A004E7899 /* VistorView.xib */,
+			);
+			path = Vistor;
+			sourceTree = "<group>";
+		};
 		04D55E4D1DE564FE006113EC = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				045A5E071DE5B9DB00054F57 /* Home.storyboard */,
-				04D55E771DE599D9006113EC /* HomeViewController.swift */,
+				043D8DC51DE5E489004E7899 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -122,10 +135,11 @@
 		04D55E6E1DE56630006113EC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				043D8DC01DE5E1B4004E7899 /* Vistor */,
 				045A5E051DE5B9CA00054F57 /* Null.storyboard */,
 				04D55E711DE598E8006113EC /* MainViewController.swift */,
-				04D55E731DE59975006113EC /* BaseTableViewController.swift */,
 				04D55E751DE5998F006113EC /* BaseViewController.swift */,
+				043D8DBE1DE5DA7B004E7899 /* BaseTableViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -226,6 +240,7 @@
 				045A5E081DE5B9DB00054F57 /* Home.storyboard in Resources */,
 				045A5E0E1DE5B9FE00054F57 /* Profile.storyboard in Resources */,
 				045A5E061DE5B9CA00054F57 /* Null.storyboard in Resources */,
+				043D8DC41DE5E24A004E7899 /* VistorView.xib in Resources */,
 				04D55E611DE564FE006113EC /* Assets.xcassets in Resources */,
 				045A5E0A1DE5B9EA00054F57 /* Message.storyboard in Resources */,
 				045A5E0C1DE5B9F400054F57 /* Discover.storyboard in Resources */,
@@ -240,13 +255,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D55E781DE599D9006113EC /* HomeViewController.swift in Sources */,
+				043D8DBF1DE5DA7B004E7899 /* BaseTableViewController.swift in Sources */,
 				04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */,
-				04D55E741DE59975006113EC /* BaseTableViewController.swift in Sources */,
 				04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */,
 				04D55E761DE5998F006113EC /* BaseViewController.swift in Sources */,
 				04D55E5A1DE564FE006113EC /* AppDelegate.swift in Sources */,
+				043D8DC61DE5E489004E7899 /* HomeViewController.swift in Sources */,
 				04D55E7A1DE599F1006113EC /* MessageViewController.swift in Sources */,
+				043D8DC21DE5E235004E7899 /* VistorView.swift in Sources */,
 				04D55E7E1DE59A09006113EC /* ProfileViewController.swift in Sources */,
 				04D55E721DE598E8006113EC /* MainViewController.swift in Sources */,
 			);

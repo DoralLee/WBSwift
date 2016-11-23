@@ -7,7 +7,7 @@
         <!--发现-->
         <scene sceneID="947-4T-BRp">
             <objects>
-                <tableViewController id="gxk-cf-2eM" sceneMemberID="viewController">
+                <tableViewController id="gxk-cf-2eM" customClass="DiscoverViewController" customModule="WBSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ysO-Gy-aqF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

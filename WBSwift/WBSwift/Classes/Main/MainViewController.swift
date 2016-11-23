@@ -15,6 +15,7 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = UIColor.orangeColor()
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         setupCompose()
         
         /* 纯代码构建框架
