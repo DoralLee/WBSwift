@@ -18,6 +18,12 @@
 		04D55E7A1DE599F1006113EC /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E791DE599F1006113EC /* MessageViewController.swift */; };
 		04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E7B1DE599FE006113EC /* DiscoverViewController.swift */; };
 		04D55E7E1DE59A09006113EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E7D1DE59A09006113EC /* ProfileViewController.swift */; };
+		04D55E851DE5AE11006113EC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E841DE5AE11006113EC /* Home.storyboard */; };
+		04D55E881DE5AE3F006113EC /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E861DE5AE3F006113EC /* Message.storyboard */; };
+		04D55E8A1DE5AF00006113EC /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E891DE5AF00006113EC /* Null.storyboard */; };
+		04D55E8D1DE5AF3E006113EC /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E8B1DE5AF3E006113EC /* Discover.storyboard */; };
+		04D55E8F1DE5AF52006113EC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E8E1DE5AF52006113EC /* Profile.storyboard */; };
+		04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E901DE5B157006113EC /* UIButton-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		04D55E791DE599F1006113EC /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		04D55E7B1DE599FE006113EC /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		04D55E7D1DE59A09006113EC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		04D55E841DE5AE11006113EC /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../../Home.storyboard; sourceTree = "<group>"; };
+		04D55E871DE5AE3F006113EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Message.storyboard; sourceTree = "<group>"; };
+		04D55E891DE5AF00006113EC /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Null.storyboard; path = ../../Null.storyboard; sourceTree = "<group>"; };
+		04D55E8C1DE5AF3E006113EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
+		04D55E8E1DE5AF52006113EC /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
+		04D55E901DE5B157006113EC /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,7 @@
 				04D55E6F1DE56630006113EC /* Message */,
 				04D55E6C1DE56630006113EC /* Discover */,
 				04D55E701DE56630006113EC /* Profile */,
+				04D55E7F1DE5ABE4006113EC /* Tools */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -91,6 +104,7 @@
 		04D55E6C1DE56630006113EC /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				04D55E8B1DE5AF3E006113EC /* Discover.storyboard */,
 				04D55E7B1DE599FE006113EC /* DiscoverViewController.swift */,
 			);
 			path = Discover;
@@ -99,6 +113,7 @@
 		04D55E6D1DE56630006113EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				04D55E841DE5AE11006113EC /* Home.storyboard */,
 				04D55E771DE599D9006113EC /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -107,6 +122,7 @@
 		04D55E6E1DE56630006113EC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				04D55E891DE5AF00006113EC /* Null.storyboard */,
 				04D55E711DE598E8006113EC /* MainViewController.swift */,
 				04D55E731DE59975006113EC /* BaseTableViewController.swift */,
 				04D55E751DE5998F006113EC /* BaseViewController.swift */,
@@ -117,6 +133,7 @@
 		04D55E6F1DE56630006113EC /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				04D55E861DE5AE3F006113EC /* Message.storyboard */,
 				04D55E791DE599F1006113EC /* MessageViewController.swift */,
 			);
 			path = Message;
@@ -125,9 +142,26 @@
 		04D55E701DE56630006113EC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				04D55E8E1DE5AF52006113EC /* Profile.storyboard */,
 				04D55E7D1DE59A09006113EC /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		04D55E7F1DE5ABE4006113EC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				04D55E801DE5ABE4006113EC /* Category */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		04D55E801DE5ABE4006113EC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				04D55E901DE5B157006113EC /* UIButton-Extension.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +224,12 @@
 			files = (
 				04D55E641DE564FE006113EC /* LaunchScreen.storyboard in Resources */,
 				04D55E611DE564FE006113EC /* Assets.xcassets in Resources */,
+				04D55E8F1DE5AF52006113EC /* Profile.storyboard in Resources */,
+				04D55E881DE5AE3F006113EC /* Message.storyboard in Resources */,
 				04D55E5F1DE564FE006113EC /* Main.storyboard in Resources */,
+				04D55E851DE5AE11006113EC /* Home.storyboard in Resources */,
+				04D55E8D1DE5AF3E006113EC /* Discover.storyboard in Resources */,
+				04D55E8A1DE5AF00006113EC /* Null.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D55E781DE599D9006113EC /* HomeViewController.swift in Sources */,
+				04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */,
 				04D55E741DE59975006113EC /* BaseTableViewController.swift in Sources */,
 				04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */,
 				04D55E761DE5998F006113EC /* BaseViewController.swift in Sources */,
@@ -229,6 +269,24 @@
 				04D55E631DE564FE006113EC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		04D55E861DE5AE3F006113EC /* Message.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04D55E871DE5AE3F006113EC /* Base */,
+			);
+			name = Message.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		04D55E8B1DE5AF3E006113EC /* Discover.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04D55E8C1DE5AF3E006113EC /* Base */,
+			);
+			name = Discover.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
