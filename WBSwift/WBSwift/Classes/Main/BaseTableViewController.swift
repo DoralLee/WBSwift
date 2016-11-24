@@ -12,7 +12,7 @@ class BaseTableViewController: UITableViewController {
     /// 懒加载访客模式视图
     lazy var vistorView : VistorView = VistorView.vistorView()
     
-    var isLogin : Bool = false
+    var isLogin : Bool = true
     
     override func loadView() {
         isLogin ? super.loadView() : setupVistorView()

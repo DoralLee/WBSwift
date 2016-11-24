@@ -16,10 +16,13 @@
 		045A5E0A1DE5B9EA00054F57 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E091DE5B9EA00054F57 /* Message.storyboard */; };
 		045A5E0C1DE5B9F400054F57 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E0B1DE5B9F400054F57 /* Discover.storyboard */; };
 		045A5E0E1DE5B9FE00054F57 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E0D1DE5B9FE00054F57 /* Profile.storyboard */; };
+		0494C5251DE68F0A00305213 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494C5241DE68F0A00305213 /* UIBarButtonItem-Extension.swift */; };
+		0494C5271DE6931F00305213 /* TitleViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494C5261DE6931F00305213 /* TitleViewButton.swift */; };
+		0494C52B1DE696D000305213 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494C5291DE696D000305213 /* PopoverViewController.swift */; };
+		0494C52C1DE696D000305213 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0494C52A1DE696D000305213 /* PopoverViewController.xib */; };
 		04D55E5A1DE564FE006113EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E591DE564FE006113EC /* AppDelegate.swift */; };
 		04D55E5F1DE564FE006113EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E5D1DE564FE006113EC /* Main.storyboard */; };
 		04D55E611DE564FE006113EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E601DE564FE006113EC /* Assets.xcassets */; };
-		04D55E641DE564FE006113EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D55E621DE564FE006113EC /* LaunchScreen.storyboard */; };
 		04D55E721DE598E8006113EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E711DE598E8006113EC /* MainViewController.swift */; };
 		04D55E761DE5998F006113EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E751DE5998F006113EC /* BaseViewController.swift */; };
 		04D55E7A1DE599F1006113EC /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E791DE599F1006113EC /* MessageViewController.swift */; };
@@ -38,11 +41,14 @@
 		045A5E091DE5B9EA00054F57 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		045A5E0B1DE5B9F400054F57 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		045A5E0D1DE5B9FE00054F57 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		0494C5241DE68F0A00305213 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		0494C5261DE6931F00305213 /* TitleViewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewButton.swift; sourceTree = "<group>"; };
+		0494C5291DE696D000305213 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		0494C52A1DE696D000305213 /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		04D55E561DE564FE006113EC /* WBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D55E591DE564FE006113EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D55E5E1DE564FE006113EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04D55E601DE564FE006113EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04D55E631DE564FE006113EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D55E651DE564FE006113EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D55E711DE598E8006113EC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		04D55E751DE5998F006113EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +78,15 @@
 			path = Vistor;
 			sourceTree = "<group>";
 		};
+		0494C5281DE696B600305213 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				0494C5291DE696D000305213 /* PopoverViewController.swift */,
+				0494C52A1DE696D000305213 /* PopoverViewController.xib */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
 		04D55E4D1DE564FE006113EC = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +110,6 @@
 				04D55E591DE564FE006113EC /* AppDelegate.swift */,
 				04D55E5D1DE564FE006113EC /* Main.storyboard */,
 				04D55E601DE564FE006113EC /* Assets.xcassets */,
-				04D55E621DE564FE006113EC /* LaunchScreen.storyboard */,
 				04D55E651DE564FE006113EC /* Info.plist */,
 			);
 			path = WBSwift;
@@ -126,6 +140,7 @@
 		04D55E6D1DE56630006113EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0494C5281DE696B600305213 /* Popover */,
 				045A5E071DE5B9DB00054F57 /* Home.storyboard */,
 				043D8DC51DE5E489004E7899 /* HomeViewController.swift */,
 			);
@@ -166,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				04D55E801DE5ABE4006113EC /* Category */,
+				0494C5261DE6931F00305213 /* TitleViewButton.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -174,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				04D55E901DE5B157006113EC /* UIButton-Extension.swift */,
+				0494C5241DE68F0A00305213 /* UIBarButtonItem-Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -236,9 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D55E641DE564FE006113EC /* LaunchScreen.storyboard in Resources */,
 				045A5E081DE5B9DB00054F57 /* Home.storyboard in Resources */,
 				045A5E0E1DE5B9FE00054F57 /* Profile.storyboard in Resources */,
+				0494C52C1DE696D000305213 /* PopoverViewController.xib in Resources */,
 				045A5E061DE5B9CA00054F57 /* Null.storyboard in Resources */,
 				043D8DC41DE5E24A004E7899 /* VistorView.xib in Resources */,
 				04D55E611DE564FE006113EC /* Assets.xcassets in Resources */,
@@ -256,7 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				043D8DBF1DE5DA7B004E7899 /* BaseTableViewController.swift in Sources */,
+				0494C5271DE6931F00305213 /* TitleViewButton.swift in Sources */,
+				0494C52B1DE696D000305213 /* PopoverViewController.swift in Sources */,
 				04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */,
+				0494C5251DE68F0A00305213 /* UIBarButtonItem-Extension.swift in Sources */,
 				04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */,
 				04D55E761DE5998F006113EC /* BaseViewController.swift in Sources */,
 				04D55E5A1DE564FE006113EC /* AppDelegate.swift in Sources */,
@@ -277,14 +297,6 @@
 				04D55E5E1DE564FE006113EC /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		04D55E621DE564FE006113EC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04D55E631DE564FE006113EC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
