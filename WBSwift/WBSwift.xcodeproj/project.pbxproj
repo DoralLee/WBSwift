@@ -16,6 +16,8 @@
 		045A5E0A1DE5B9EA00054F57 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E091DE5B9EA00054F57 /* Message.storyboard */; };
 		045A5E0C1DE5B9F400054F57 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E0B1DE5B9F400054F57 /* Discover.storyboard */; };
 		045A5E0E1DE5B9FE00054F57 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045A5E0D1DE5B9FE00054F57 /* Profile.storyboard */; };
+		046DE8551DE7D12B00E829D3 /* LYPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE8541DE7D12B00E829D3 /* LYPresentationController.swift */; };
+		046DE8571DE7E26700E829D3 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DE8561DE7E26700E829D3 /* PopoverAnimator.swift */; };
 		0494C5251DE68F0A00305213 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494C5241DE68F0A00305213 /* UIBarButtonItem-Extension.swift */; };
 		0494C5271DE6931F00305213 /* TitleViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494C5261DE6931F00305213 /* TitleViewButton.swift */; };
 		0494C52B1DE696D000305213 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494C5291DE696D000305213 /* PopoverViewController.swift */; };
@@ -41,6 +43,8 @@
 		045A5E091DE5B9EA00054F57 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		045A5E0B1DE5B9F400054F57 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		045A5E0D1DE5B9FE00054F57 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		046DE8541DE7D12B00E829D3 /* LYPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPresentationController.swift; sourceTree = "<group>"; };
+		046DE8561DE7E26700E829D3 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		0494C5241DE68F0A00305213 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		0494C5261DE6931F00305213 /* TitleViewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewButton.swift; sourceTree = "<group>"; };
 		0494C5291DE696D000305213 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 			children = (
 				0494C5291DE696D000305213 /* PopoverViewController.swift */,
 				0494C52A1DE696D000305213 /* PopoverViewController.xib */,
+				046DE8541DE7D12B00E829D3 /* LYPresentationController.swift */,
+				046DE8561DE7E26700E829D3 /* PopoverAnimator.swift */,
 			);
 			path = Popover;
 			sourceTree = "<group>";
@@ -278,9 +284,11 @@
 				04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */,
 				0494C5251DE68F0A00305213 /* UIBarButtonItem-Extension.swift in Sources */,
 				04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */,
+				046DE8551DE7D12B00E829D3 /* LYPresentationController.swift in Sources */,
 				04D55E761DE5998F006113EC /* BaseViewController.swift in Sources */,
 				04D55E5A1DE564FE006113EC /* AppDelegate.swift in Sources */,
 				043D8DC61DE5E489004E7899 /* HomeViewController.swift in Sources */,
+				046DE8571DE7E26700E829D3 /* PopoverAnimator.swift in Sources */,
 				04D55E7A1DE599F1006113EC /* MessageViewController.swift in Sources */,
 				043D8DC21DE5E235004E7899 /* VistorView.swift in Sources */,
 				04D55E7E1DE59A09006113EC /* ProfileViewController.swift in Sources */,

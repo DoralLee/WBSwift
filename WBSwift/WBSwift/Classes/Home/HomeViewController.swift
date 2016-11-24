@@ -11,6 +11,10 @@ import UIKit
 class HomeViewController: BaseTableViewController {
 
     lazy var titleViewButton : TitleViewButton = TitleViewButton()
+
+    lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (presented) in
+        self?.titleViewButton.selected = presented
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +49,15 @@ extension HomeViewController {
     @objc private func titleBtnClick(titleBtn : TitleViewButton) {
         titleBtn.selected = !titleBtn.selected
         
-        let popover = PopoverViewController()
-        popover.modalPresentationStyle = .Custom
-        self.presentViewController(popover, animated: true, completion: nil)
+        let popoverVC = PopoverViewController()
+        popoverVC.transitioningDelegate = popoverAnimator
+        let containerX = UIScreen.mainScreen().bounds.size.width * 0.25
+        let containerW = UIScreen.mainScreen().bounds.size.width * 0.5
+        popoverAnimator.presentedFrame = CGRectMake(containerX, 55, containerW, 250)
+        
+        popoverVC.modalPresentationStyle = .Custom
+        
+        self.presentViewController(popoverVC, animated: true, completion: nil)
         
     }
 }
