@@ -31,6 +31,13 @@
 		04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E7B1DE599FE006113EC /* DiscoverViewController.swift */; };
 		04D55E7E1DE59A09006113EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E7D1DE59A09006113EC /* ProfileViewController.swift */; };
 		04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E901DE5B157006113EC /* UIButton-Extension.swift */; };
+		0A2C89671DEAEA6B00A58C90 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2C89661DEAEA6B00A58C90 /* NetworkTools.swift */; };
+		0A2C896E1DEAF83100A58C90 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2C896D1DEAF83100A58C90 /* Common.swift */; };
+		0A8986E51DEB521C00A0F46C /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986E21DEB521C00A0F46C /* OAuthViewController.swift */; };
+		0A8986E61DEB521C00A0F46C /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8986E31DEB521C00A0F46C /* OAuthViewController.xib */; };
+		0A8986E81DEB527000A0F46C /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986E71DEB527000A0F46C /* UserAccount.swift */; };
+		0A8986EA1DEB57B600A0F46C /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986E91DEB57B600A0F46C /* UserAccountViewModel.swift */; };
+		584CE50784CA053B62B3D6F5 /* Pods_WBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D8A3F8E6F56CCDB82FAC19 /* Pods_WBSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +67,15 @@
 		04D55E7B1DE599FE006113EC /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		04D55E7D1DE59A09006113EC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		04D55E901DE5B157006113EC /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		0638D1D6FA9DF1E7BF61D89E /* Pods-WBSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WBSwift/Pods-WBSwift.release.xcconfig"; sourceTree = "<group>"; };
+		0A2C89661DEAEA6B00A58C90 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		0A2C896D1DEAF83100A58C90 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		0A8986E21DEB521C00A0F46C /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		0A8986E31DEB521C00A0F46C /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
+		0A8986E71DEB527000A0F46C /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		0A8986E91DEB57B600A0F46C /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		84D8A3F8E6F56CCDB82FAC19 /* Pods_WBSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA15B834A4A4A1B2C6108324 /* Pods-WBSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WBSwift/Pods-WBSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584CE50784CA053B62B3D6F5 /* Pods_WBSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +115,8 @@
 			children = (
 				04D55E581DE564FE006113EC /* WBSwift */,
 				04D55E571DE564FE006113EC /* Products */,
+				C7562AD85CE74A7DE90D2FB6 /* Pods */,
+				22A2445C5C70DC0F3B39FA69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				043D8DC01DE5E1B4004E7899 /* Vistor */,
+				0A2C89681DEAF46400A58C90 /* OAuth */,
 				045A5E051DE5B9CA00054F57 /* Null.storyboard */,
 				04D55E711DE598E8006113EC /* MainViewController.swift */,
 				04D55E751DE5998F006113EC /* BaseViewController.swift */,
@@ -188,6 +208,8 @@
 			children = (
 				04D55E801DE5ABE4006113EC /* Category */,
 				0494C5261DE6931F00305213 /* TitleViewButton.swift */,
+				0A2C89661DEAEA6B00A58C90 /* NetworkTools.swift */,
+				0A2C896D1DEAF83100A58C90 /* Common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -201,6 +223,50 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		0A2C89681DEAF46400A58C90 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				0A8986E11DEB521C00A0F46C /* Controller */,
+				0A8986E41DEB521C00A0F46C /* Model */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		0A8986E11DEB521C00A0F46C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A8986E31DEB521C00A0F46C /* OAuthViewController.xib */,
+				0A8986E21DEB521C00A0F46C /* OAuthViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A8986E41DEB521C00A0F46C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A8986E71DEB527000A0F46C /* UserAccount.swift */,
+				0A8986E91DEB57B600A0F46C /* UserAccountViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22A2445C5C70DC0F3B39FA69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84D8A3F8E6F56CCDB82FAC19 /* Pods_WBSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7562AD85CE74A7DE90D2FB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA15B834A4A4A1B2C6108324 /* Pods-WBSwift.debug.xcconfig */,
+				0638D1D6FA9DF1E7BF61D89E /* Pods-WBSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,9 +274,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04D55E681DE564FE006113EC /* Build configuration list for PBXNativeTarget "WBSwift" */;
 			buildPhases = (
+				118B00DFA4A506EDBB6C93DD /* [CP] Check Pods Manifest.lock */,
 				04D55E521DE564FE006113EC /* Sources */,
 				04D55E531DE564FE006113EC /* Frameworks */,
 				04D55E541DE564FE006113EC /* Resources */,
+				1EE5CE14479F8CE6EAEB16FC /* [CP] Embed Pods Frameworks */,
+				C31C78DA6E18756AE588C110 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +333,7 @@
 				0494C52C1DE696D000305213 /* PopoverViewController.xib in Resources */,
 				045A5E061DE5B9CA00054F57 /* Null.storyboard in Resources */,
 				043D8DC41DE5E24A004E7899 /* VistorView.xib in Resources */,
+				0A8986E61DEB521C00A0F46C /* OAuthViewController.xib in Resources */,
 				04D55E611DE564FE006113EC /* Assets.xcassets in Resources */,
 				045A5E0A1DE5B9EA00054F57 /* Message.storyboard in Resources */,
 				045A5E0C1DE5B9F400054F57 /* Discover.storyboard in Resources */,
@@ -273,6 +343,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		118B00DFA4A506EDBB6C93DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1EE5CE14479F8CE6EAEB16FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WBSwift/Pods-WBSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C31C78DA6E18756AE588C110 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WBSwift/Pods-WBSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04D55E521DE564FE006113EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,12 +399,17 @@
 				043D8DBF1DE5DA7B004E7899 /* BaseTableViewController.swift in Sources */,
 				0494C5271DE6931F00305213 /* TitleViewButton.swift in Sources */,
 				0494C52B1DE696D000305213 /* PopoverViewController.swift in Sources */,
+				0A2C896E1DEAF83100A58C90 /* Common.swift in Sources */,
 				04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */,
+				0A8986EA1DEB57B600A0F46C /* UserAccountViewModel.swift in Sources */,
+				0A8986E81DEB527000A0F46C /* UserAccount.swift in Sources */,
 				0494C5251DE68F0A00305213 /* UIBarButtonItem-Extension.swift in Sources */,
 				04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */,
 				046DE8551DE7D12B00E829D3 /* LYPresentationController.swift in Sources */,
 				04D55E761DE5998F006113EC /* BaseViewController.swift in Sources */,
+				0A2C89671DEAEA6B00A58C90 /* NetworkTools.swift in Sources */,
 				04D55E5A1DE564FE006113EC /* AppDelegate.swift in Sources */,
+				0A8986E51DEB521C00A0F46C /* OAuthViewController.swift in Sources */,
 				043D8DC61DE5E489004E7899 /* HomeViewController.swift in Sources */,
 				046DE8571DE7E26700E829D3 /* PopoverAnimator.swift in Sources */,
 				04D55E7A1DE599F1006113EC /* MessageViewController.swift in Sources */,
@@ -395,6 +518,7 @@
 		};
 		04D55E691DE564FE006113EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA15B834A4A4A1B2C6108324 /* Pods-WBSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -408,6 +532,7 @@
 		};
 		04D55E6A1DE564FE006113EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0638D1D6FA9DF1E7BF61D89E /* Pods-WBSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";

@@ -12,7 +12,7 @@ class BaseTableViewController: UITableViewController {
     /// 懒加载访客模式视图
     lazy var vistorView : VistorView = VistorView.vistorView()
     
-    var isLogin : Bool = true
+    var isLogin : Bool = UserAccountViewModel.shareInstance.isLogin
     
     override func loadView() {
         isLogin ? super.loadView() : setupVistorView()
@@ -20,7 +20,9 @@ class BaseTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationItem()
+        if !isLogin {
+            setupNavigationItem()
+        }
     }
 }
 // MARK: - 设置UI
@@ -44,6 +46,10 @@ extension BaseTableViewController {
     }
     
     @objc private func loginBtnClick() {
-        print("loginBtnClick")
+        let authVc = OAuthViewController()
+        
+        let nav = UINavigationController(rootViewController: authVc)
+        
+        presentViewController(nav, animated: true, completion: nil)
     }
 }

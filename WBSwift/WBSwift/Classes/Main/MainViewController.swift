@@ -41,7 +41,7 @@ class MainViewController: UITabBarController {
 extension MainViewController {
     private func setupCompose() {
         tabBar.addSubview(composeBtn)
-        print(tabBar.bounds.size.height)
+//        print(tabBar.bounds.size.height)
         composeBtn.center = CGPointMake(tabBar.center.x, tabBar.bounds.size.height * 0.5)
     }
 }
