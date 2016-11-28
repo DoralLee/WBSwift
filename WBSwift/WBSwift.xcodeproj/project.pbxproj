@@ -37,6 +37,8 @@
 		0A8986E61DEB521C00A0F46C /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8986E31DEB521C00A0F46C /* OAuthViewController.xib */; };
 		0A8986E81DEB527000A0F46C /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986E71DEB527000A0F46C /* UserAccount.swift */; };
 		0A8986EA1DEB57B600A0F46C /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986E91DEB57B600A0F46C /* UserAccountViewModel.swift */; };
+		0A8986EE1DEBC27F00A0F46C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986EC1DEBC27F00A0F46C /* WelcomeViewController.swift */; };
+		0A8986EF1DEBC27F00A0F46C /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8986ED1DEBC27F00A0F46C /* WelcomeViewController.xib */; };
 		584CE50784CA053B62B3D6F5 /* Pods_WBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D8A3F8E6F56CCDB82FAC19 /* Pods_WBSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		0A8986E31DEB521C00A0F46C /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		0A8986E71DEB527000A0F46C /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		0A8986E91DEB57B600A0F46C /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		0A8986EC1DEBC27F00A0F46C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		0A8986ED1DEBC27F00A0F46C /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		84D8A3F8E6F56CCDB82FAC19 /* Pods_WBSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA15B834A4A4A1B2C6108324 /* Pods-WBSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WBSwift/Pods-WBSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +179,7 @@
 		04D55E6E1DE56630006113EC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0A8986EB1DEBC24800A0F46C /* Welcome */,
 				043D8DC01DE5E1B4004E7899 /* Vistor */,
 				0A2C89681DEAF46400A58C90 /* OAuth */,
 				045A5E051DE5B9CA00054F57 /* Null.storyboard */,
@@ -248,6 +253,16 @@
 				0A8986E91DEB57B600A0F46C /* UserAccountViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0A8986EB1DEBC24800A0F46C /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				0A8986ED1DEBC27F00A0F46C /* WelcomeViewController.xib */,
+				0A8986EC1DEBC27F00A0F46C /* WelcomeViewController.swift */,
+			);
+			name = Welcome;
+			path = Vistor/Welcome;
 			sourceTree = "<group>";
 		};
 		22A2445C5C70DC0F3B39FA69 /* Frameworks */ = {
@@ -333,6 +348,7 @@
 				0494C52C1DE696D000305213 /* PopoverViewController.xib in Resources */,
 				045A5E061DE5B9CA00054F57 /* Null.storyboard in Resources */,
 				043D8DC41DE5E24A004E7899 /* VistorView.xib in Resources */,
+				0A8986EF1DEBC27F00A0F46C /* WelcomeViewController.xib in Resources */,
 				0A8986E61DEB521C00A0F46C /* OAuthViewController.xib in Resources */,
 				04D55E611DE564FE006113EC /* Assets.xcassets in Resources */,
 				045A5E0A1DE5B9EA00054F57 /* Message.storyboard in Resources */,
@@ -402,6 +418,7 @@
 				0A2C896E1DEAF83100A58C90 /* Common.swift in Sources */,
 				04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */,
 				0A8986EA1DEB57B600A0F46C /* UserAccountViewModel.swift in Sources */,
+				0A8986EE1DEBC27F00A0F46C /* WelcomeViewController.swift in Sources */,
 				0A8986E81DEB527000A0F46C /* UserAccount.swift in Sources */,
 				0494C5251DE68F0A00305213 /* UIBarButtonItem-Extension.swift in Sources */,
 				04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */,

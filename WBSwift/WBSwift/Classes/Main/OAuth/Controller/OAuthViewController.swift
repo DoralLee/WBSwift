@@ -126,6 +126,13 @@ extension OAuthViewController {
                 account.screen_name = result["screen_name"] as? String
                 account.avatar_large = result["avatar_large"] as? String
                 NSKeyedArchiver.archiveRootObject(account, toFile: UserAccountViewModel.shareInstance.accountPath)
+                
+                UserAccountViewModel.shareInstance.account = account
+                
+                self.dismissViewControllerAnimated(false, completion: { 
+                    // 加载欢迎页面
+                    UIApplication.sharedApplication().keyWindow?.rootViewController = WelcomeViewController()
+                })
             }
         }
     }

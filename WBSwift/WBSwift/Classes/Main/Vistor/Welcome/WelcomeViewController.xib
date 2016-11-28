@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="WBSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarImageBottomCons" destination="n0K-yD-rFL" id="e9J-Oa-YQO"/>
+                <outlet property="avatarImageView" destination="I1m-jG-xbg" id="h7S-uz-RZE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="dcU-7I-nJ8">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I1m-jG-xbg">
+                    <rect key="frame" x="255" y="360" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="xao-dS-VmC"/>
+                        <constraint firstAttribute="height" constant="90" id="zec-qI-ZeF"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wD9-KS-WnR">
+                    <rect key="frame" x="262.5" y="470" width="75" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wD9-KS-WnR" firstAttribute="centerX" secondItem="I1m-jG-xbg" secondAttribute="centerX" id="1gI-24-q8x"/>
+                <constraint firstItem="dcU-7I-nJ8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ECk-Yb-rdL"/>
+                <constraint firstItem="wD9-KS-WnR" firstAttribute="top" secondItem="I1m-jG-xbg" secondAttribute="bottom" constant="20" id="GWo-KS-uMt"/>
+                <constraint firstItem="dcU-7I-nJ8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QC1-cI-GOb"/>
+                <constraint firstAttribute="trailing" secondItem="dcU-7I-nJ8" secondAttribute="trailing" id="Uk5-Ar-Doq"/>
+                <constraint firstItem="I1m-jG-xbg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zni-XQ-S9b"/>
+                <constraint firstAttribute="bottom" secondItem="I1m-jG-xbg" secondAttribute="bottom" constant="150" id="n0K-yD-rFL"/>
+                <constraint firstAttribute="bottom" secondItem="dcU-7I-nJ8" secondAttribute="bottom" id="nZu-Ws-vhl"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+    </resources>
+</document>
