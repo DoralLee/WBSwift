@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeViewController: BaseTableViewController {
 
+    // MARK: - 懒加载属性
     lazy var titleViewButton : TitleViewButton = TitleViewButton()
+    
+    lazy var viewModels : [StatusViewModel] = [StatusViewModel]()
 
     lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (presented) in
         self?.titleViewButton.selected = presented
     }
     
+    // MARK: - 系统方法
     override func viewDidLoad() {
         super.viewDidLoad()
         vistorView.addRotationAnimation()
@@ -24,6 +29,10 @@ class HomeViewController: BaseTableViewController {
         }
         setupNavigationItem()
         
+        loadStatus()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
     }
 
 }
@@ -59,5 +68,61 @@ extension HomeViewController {
         
         self.presentViewController(popoverVC, animated: true, completion: nil)
         
+    }
+}
+
+// MARK: - 数据请求
+extension HomeViewController {
+    private func loadStatus() {
+        NetworkTools.shareInstance.requestStatues { (result, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            guard let resultArray = result else {
+                return
+            }
+            
+            for statusDict in resultArray {
+                let status = Status(statusDict: statusDict)
+                let viewModel = StatusViewModel(status: status)
+                self.viewModels.append(viewModel)
+            }
+            
+            // 微博未提供图片尺寸，我们只能通过先缓存图片
+            
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func cacheImage(viewModels:[StatusViewModel]) {
+        let group = dispatch_group_create()
+        for viewModel in viewModels {
+            for picURL in viewModel.picURLs {
+                dispatch_group_enter(group)
+                SDWebImageManager.sharedManager().downloadWithURL(picURL, options: [], progress: nil, completed: { (_, _, _, _) in
+                    dispatch_group_leave(group)
+                })
+            }
+        }
+        dispatch_group_notify(group, dispatch_get_main_queue()) { 
+            self.tableView.reloadData()
+        }
+    }
+}
+
+// MARK: - table view delegate
+extension HomeViewController {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModels.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellID = "homeCellID"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellID) as! HomeViewCell
+        let viewModel = viewModels[indexPath.row]
+        cell.viewModel = viewModel
+        return cell
     }
 }

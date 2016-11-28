@@ -24,6 +24,7 @@ class NetworkTools: AFHTTPSessionManager {
 
 // MARK: - 封装请求方法
 extension NetworkTools {
+    // GET或POST请求数据
     func request(method : RequestType,URLString: String, parameters : AnyObject?, finishedCallBack:((result:AnyObject?, error:NSError?)->())?) {
         
         let successBack = { (task:NSURLSessionDataTask, result:AnyObject?) in
@@ -46,7 +47,7 @@ extension NetworkTools {
     }
 }
 
-// MARK: - 进一步封装
+// MARK: - 进一步封装具体请求
 extension NetworkTools {
     /// 获取accessToken
     func requestAccessToken(code:String, finishedCallBack:((result:[String:AnyObject]?, error: NSError?) -> ())?) {
@@ -59,13 +60,32 @@ extension NetworkTools {
             }
         }
     }
-    
+    ///获取用户信息
     func requestAccountInfo(accessToken : String, uid : String, finishCallBack:((result:[String: AnyObject]?, error:NSError?) -> ())?) {
         let urlString = "2/users/show.json"
         let parameter = ["access_token":accessToken, "uid":uid]
         request(.Get, URLString: urlString, parameters: parameter) { (result, error) in
             if let callBack = finishCallBack {
                 callBack(result: result as? [String : AnyObject], error: error)
+            }
+        }
+    }
+    
+    ///获取首页数据
+    func requestStatues(finishCallBack:((result: [[String:AnyObject]]?, error:NSError?) -> ())?) {
+        let urlString = "2/statuses/home_timeline.json"
+        
+        let parameter = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!]
+        request(.Get, URLString: urlString, parameters: parameter) { (result, error) in
+            guard let resultDict = result as? [String : AnyObject] else {
+                if let callBack = finishCallBack {
+                    callBack(result: nil, error: error)
+                }
+                return
+            }
+            
+            if let callBack = finishCallBack {
+                callBack(result: resultDict["statuses"] as? [[String : AnyObject]], error: error)
             }
         }
     }

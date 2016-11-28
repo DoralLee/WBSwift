@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserAccount: NSObject, NSCoding {
+class UserAccount: BaseModel, NSCoding {
     // MARK: - 属性
     ///用户授权
     var access_token : String?
@@ -32,7 +32,6 @@ class UserAccount: NSObject, NSCoding {
         super.init()
         setValuesForKeysWithDictionary(infoDict)
     }
-    override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
     
     // MARK: - 解档&归档
     required init?(coder aDecoder: NSCoder) {
