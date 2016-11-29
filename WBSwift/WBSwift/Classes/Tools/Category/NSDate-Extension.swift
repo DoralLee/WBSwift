@@ -13,7 +13,7 @@ extension NSDate {
     class func createDateString(createAt:String) -> String {
         // Tue May 31 17:46:55 +0800 2011
         let fmt = NSDateFormatter()
-        fmt.locale = NSLocale.currentLocale()
+        fmt.locale = NSLocale(localeIdentifier: "en")
         fmt.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
         
         guard let createDate = fmt.dateFromString(createAt) else {

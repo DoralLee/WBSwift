@@ -9,5 +9,5 @@ target 'WBSwift' do
   pod 'SVProgressHUD'
   pod 'SDWebImage'
   pod 'SnapKit', '~> 0.22.0’
-
+  pod 'MJRefresh'
 end

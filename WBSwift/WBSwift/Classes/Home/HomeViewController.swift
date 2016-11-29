@@ -8,6 +8,11 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
+
+private let kTipStartY :CGFloat = 10
+private let kTipDisplayY : CGFloat = 44
+private let kTipAnimationDuration : NSTimeInterval = 1.0
 
 class HomeViewController: BaseTableViewController {
 
@@ -19,6 +24,7 @@ class HomeViewController: BaseTableViewController {
     lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (presented) in
         self?.titleViewButton.selected = presented
     }
+    lazy var tipLabel : UILabel = UILabel()
     
     // MARK: - 系统方法
     override func viewDidLoad() {
@@ -28,11 +34,14 @@ class HomeViewController: BaseTableViewController {
             return
         }
         setupNavigationItem()
-        
-        loadStatus()
         // 不再使用系统的自动计算高度，所以舍弃该方法
 //        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        
+        setupHeaderRefresh()
+        setupFooterRefresh()
+        
+        setupTipLabel()
     }
 
 }
@@ -48,9 +57,38 @@ extension HomeViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
         
         // 设置titleview
-        titleViewButton.setTitle("Kevin", forState: .Normal)
+        let title = UserAccountViewModel.shareInstance.account?.screen_name ?? ""
+        titleViewButton.setTitle(title, forState: .Normal)
         titleViewButton.addTarget(self, action: #selector(HomeViewController.titleBtnClick(_:)), forControlEvents: .TouchUpInside)
         navigationItem.titleView = titleViewButton
+    }
+    
+    /// 设置下拉刷新
+    private func setupHeaderRefresh() {
+        let header = MJRefreshNormalHeader {[weak self] in
+            self?.loadStatus(true)
+        }
+        header.setTitle("下拉刷新", forState: .Idle)
+        header.setTitle("松手更新", forState: .Pulling)
+        header.setTitle("正在刷新。。。", forState: .Refreshing)
+        
+        tableView.mj_header = header
+        tableView.mj_header.beginRefreshing()
+    }
+    /// 设置上提加载
+    private func setupFooterRefresh() {
+        tableView.mj_footer = MJRefreshAutoFooter { [weak self]  in
+            self?.loadStatus(false)
+        }
+    }
+    
+    private func setupTipLabel() {
+        navigationController?.navigationBar.insertSubview(tipLabel, atIndex: 0)
+        tipLabel.frame = CGRectMake(0, kTipStartY, UIScreen.mainScreen().bounds.width, 32)
+        tipLabel.textColor = UIColor.whiteColor()
+        tipLabel.backgroundColor = UIColor.orangeColor()
+        tipLabel.textAlignment = .Center
+        tipLabel.hidden = true
     }
 }
 // MARK: - 事件监听
@@ -73,25 +111,43 @@ extension HomeViewController {
 
 // MARK: - 数据请求
 extension HomeViewController {
-    private func loadStatus() {
-        NetworkTools.shareInstance.requestStatues { (result, error) in
+    private func loadStatus(isRefresh:Bool) {
+        var sinceId = 0
+        var maxId = 0
+        if isRefresh {
+            sinceId = viewModels.first?.status?.mid ?? 0
+        } else {
+            maxId = viewModels.last?.status?.mid ?? 0
+            maxId = maxId == 0 ? 0 : maxId - 1
+        }
+        
+        NetworkTools.shareInstance.requestStatues(sinceId, max_id: maxId) { (result, error) in
             if error != nil {
                 print(error)
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
                 return
             }
             guard let resultArray = result else {
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
                 return
             }
-            
+            var tempViewModels = [StatusViewModel]()
             for statusDict in resultArray {
                 let status = Status(statusDict: statusDict)
                 let viewModel = StatusViewModel(status: status)
-                self.viewModels.append(viewModel)
+                tempViewModels.append(viewModel)
             }
-            
+            if isRefresh {
+                self.viewModels = tempViewModels + self.viewModels
+            } else {
+                self.viewModels += tempViewModels
+            }
             // 微博未提供图片尺寸，我们只能通过先缓存图片
-            self.cacheImage(self.viewModels)
+            self.cacheImage(tempViewModels)
         }
+
     }
     
     private func cacheImage(viewModels:[StatusViewModel]) {
@@ -106,6 +162,24 @@ extension HomeViewController {
         }
         dispatch_group_notify(group, dispatch_get_main_queue()) { 
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+            
+            self.animationDisplayTipLabel(viewModels.count)
+        }
+    }
+    
+    private func animationDisplayTipLabel(count : Int) {
+        tipLabel.text = count == 0 ? "没有最新微博" : "\(count)条新微博"
+        UIView.animateWithDuration(kTipAnimationDuration, animations: { 
+            self.tipLabel.hidden = false
+            self.tipLabel.frame.origin.y = kTipDisplayY
+            }) { (_) in
+                UIView.animateWithDuration(kTipAnimationDuration, delay: kTipAnimationDuration, options: [], animations: { 
+                    self.tipLabel.frame.origin.y = kTipStartY
+                    }, completion: { (_) in
+                        self.tipLabel.hidden = true
+                })
         }
     }
 }

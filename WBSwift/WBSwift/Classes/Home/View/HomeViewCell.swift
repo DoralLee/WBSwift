@@ -72,8 +72,11 @@ class HomeViewCell: BaseTableViewCell {
             mbrankImageView.image = viewModel.rankImage
             
             createdAtLabel.text = viewModel.createdAtText
-            
-            sourceLabel.text = viewModel.sourceText
+            if let sourceText = viewModel.sourceText {
+                sourceLabel.text = "来自 " + sourceText
+            } else {
+                sourceLabel.text = nil
+            }
             
             contentLabel.text = viewModel.status?.text
             

@@ -72,10 +72,10 @@ extension NetworkTools {
     }
     
     ///获取首页数据
-    func requestStatues(finishCallBack:((result: [[String:AnyObject]]?, error:NSError?) -> ())?) {
+    func requestStatues(since_id:Int, max_id:Int, finishCallBack:((result: [[String:AnyObject]]?, error:NSError?) -> ())?) {
         let urlString = "2/statuses/home_timeline.json"
         
-        let parameter = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!]
+        let parameter = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!, "since_id" : since_id, "max_id":max_id]
         request(.Get, URLString: urlString, parameters: parameter) { (result, error) in
             guard let resultDict = result as? [String : AnyObject] else {
                 if let callBack = finishCallBack {
