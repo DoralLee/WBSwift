@@ -35,6 +35,13 @@ class HomeViewCell: BaseTableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     /// 微博配图
     @IBOutlet weak var picView: PicCollectionView!
+    /// 转发内容
+    @IBOutlet weak var retweetedContentLabel: UILabel!
+    /// 底部工具条
+    @IBOutlet weak var bottomToolView: UIView!
+    // 转发微博背景图
+    @IBOutlet weak var retweetedBgView: UIView!
+    
     
     // MARK: - 约束属性
     @IBOutlet weak var contentLabelWidthCons: NSLayoutConstraint!
@@ -42,6 +49,11 @@ class HomeViewCell: BaseTableViewCell {
     @IBOutlet weak var picViewHeightCons: NSLayoutConstraint!
     
     @IBOutlet weak var picViewWidthCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var pivViewTopCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var retweetedContentLabelTopCons: NSLayoutConstraint!
+    
     
     // MARK: - 自定义属性
     var viewModel : StatusViewModel? {
@@ -70,6 +82,28 @@ class HomeViewCell: BaseTableViewCell {
             picViewHeightCons.constant = picViewSize.height
             
             picView.picURLs = viewModel.picURLs
+            // 设置转发正文
+            if viewModel.status?.retweeted_status != nil {
+                if let retweetedContent = viewModel.status?.retweeted_status?.text,
+                    let retweetedScreenName = viewModel.status?.retweeted_status?.user?.screen_name {
+                    retweetedContentLabel.text = "@" + "\(retweetedScreenName)" + ": " + retweetedContent
+                }
+                retweetedBgView.hidden = false
+                
+                retweetedContentLabelTopCons.constant = 15
+            } else {
+                retweetedContentLabel.text = nil
+                
+                retweetedBgView.hidden = true
+                
+                retweetedContentLabelTopCons.constant = 0
+            }
+            // 设置cell高度
+            if viewModel.cellHeight == 0 {
+                layoutIfNeeded()
+                
+                viewModel.cellHeight = CGRectGetMaxY(bottomToolView.frame)
+            }
         }
     }
     
@@ -84,9 +118,12 @@ class HomeViewCell: BaseTableViewCell {
 extension HomeViewCell {
     private func calculatePicViewSize(count : Int) -> CGSize {
         if count == 0 {
+            pivViewTopCons.constant = 0
             return CGSizeZero
         }
-
+        
+        pivViewTopCons.constant = 10
+        
         let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
         // 设置单张图片
         if count == 1 {

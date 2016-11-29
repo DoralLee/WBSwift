@@ -25,6 +25,10 @@ class StatusViewModel: NSObject {
     /// 微博配图处理
     var picURLs : [NSURL] = [NSURL]()
     
+    /// cell高度
+    var cellHeight : CGFloat = 0
+    
+    
     // MARK: - 构造函数
     init(status : Status) {
         self.status = status
@@ -63,7 +67,7 @@ class StatusViewModel: NSObject {
         profileURL = NSURL(string: profileURLString)
         
         // 微博配图处理
-        if let picDicts = status.pic_urls {
+        if let picDicts = status.pic_urls?.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls {
             for picDict in picDicts {
                 guard let pictString = picDict["thumbnail_pic"] else {
                     continue

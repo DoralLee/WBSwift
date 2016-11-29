@@ -26,6 +26,8 @@ class Status: BaseModel {
     var user : User?
     /// 微博的配图
     var pic_urls : [[String : String]]?
+    /// 转发微博
+    var retweeted_status : Status?
 
     // MARK: - 自定义构造函数
     init(statusDict:[String : AnyObject]) {
@@ -34,6 +36,10 @@ class Status: BaseModel {
         
         if let userDict = statusDict["user"] as? [String : AnyObject] {
             user = User(dict: userDict)
+        }
+        
+        if let retweetedDict = statusDict["retweeted_status"] as? [String : AnyObject] {
+            retweeted_status = Status(statusDict: retweetedDict)
         }
     }
     

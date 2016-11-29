@@ -30,8 +30,8 @@ class HomeViewController: BaseTableViewController {
         setupNavigationItem()
         
         loadStatus()
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
+        // 不再使用系统的自动计算高度，所以舍弃该方法
+//        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
     }
 
@@ -90,9 +90,7 @@ extension HomeViewController {
             }
             
             // 微博未提供图片尺寸，我们只能通过先缓存图片
-            
-            
-            self.tableView.reloadData()
+            self.cacheImage(self.viewModels)
         }
     }
     
@@ -101,7 +99,7 @@ extension HomeViewController {
         for viewModel in viewModels {
             for picURL in viewModel.picURLs {
                 dispatch_group_enter(group)
-                SDWebImageManager.sharedManager().downloadWithURL(picURL, options: [], progress: nil, completed: { (_, _, _, _) in
+                SDWebImageManager.sharedManager().downloadImageWithURL(picURL, options: [], progress: nil, completed: { (_, _, _, _, _) in
                     dispatch_group_leave(group)
                 })
             }
@@ -124,5 +122,10 @@ extension HomeViewController {
         let viewModel = viewModels[indexPath.row]
         cell.viewModel = viewModel
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let viewModel = viewModels[indexPath.row]
+        return viewModel.cellHeight
     }
 }
