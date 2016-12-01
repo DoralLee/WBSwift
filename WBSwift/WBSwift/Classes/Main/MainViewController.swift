@@ -43,5 +43,16 @@ extension MainViewController {
         tabBar.addSubview(composeBtn)
 //        print(tabBar.bounds.size.height)
         composeBtn.center = CGPointMake(tabBar.center.x, tabBar.bounds.size.height * 0.5)
+        composeBtn.addTarget(self, action: #selector(MainViewController.composeBtnClick), forControlEvents: .TouchUpInside)
+    }
+}
+
+// MARK: - 事件监听
+extension MainViewController {
+    @objc private func composeBtnClick() {
+        let composeVC = ComposeViewController()
+        let composeNav = UINavigationController(rootViewController: composeVC)
+        
+        presentViewController(composeNav, animated: true, completion: nil)
     }
 }

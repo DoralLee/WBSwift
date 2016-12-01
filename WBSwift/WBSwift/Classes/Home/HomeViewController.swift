@@ -145,12 +145,12 @@ extension HomeViewController {
                 self.viewModels += tempViewModels
             }
             // 微博未提供图片尺寸，我们只能通过先缓存图片
-            self.cacheImage(tempViewModels)
+            self.cacheImage(tempViewModels, isRefresh: isRefresh)
         }
 
     }
     
-    private func cacheImage(viewModels:[StatusViewModel]) {
+    private func cacheImage(viewModels:[StatusViewModel], isRefresh:Bool) {
         let group = dispatch_group_create()
         for viewModel in viewModels {
             for picURL in viewModel.picURLs {
@@ -164,8 +164,9 @@ extension HomeViewController {
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
-            
-            self.animationDisplayTipLabel(viewModels.count)
+            if isRefresh {
+                self.animationDisplayTipLabel(viewModels.count)
+            }
         }
     }
     

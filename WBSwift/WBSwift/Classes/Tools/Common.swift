@@ -13,5 +13,10 @@ let app_key = "2826068451"
 let app_secret = "c0540f8553053a0ed80202f33c388817"
 let redirect_url = "https://kevin.com"
 
+
+// MARK: - 通知常量
+let PicPickerCellAddPicKey = "PicPickerCellAddPicKey"
+let PicPickerCellRemovePicKey = "PicPickerCellRemovePicKey"
+
 // MARK: - 网络接口
 let WBBaseURL = "https://api.weibo.com"

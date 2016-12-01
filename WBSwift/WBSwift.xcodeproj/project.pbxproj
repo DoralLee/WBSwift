@@ -30,6 +30,13 @@
 		04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D55E901DE5B157006113EC /* UIButton-Extension.swift */; };
 		0A2C89671DEAEA6B00A58C90 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2C89661DEAEA6B00A58C90 /* NetworkTools.swift */; };
 		0A2C896E1DEAF83100A58C90 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2C896D1DEAF83100A58C90 /* Common.swift */; };
+		0A6DFA851DEE99E900C4737F /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DFA831DEE99E900C4737F /* ComposeViewController.swift */; };
+		0A6DFA861DEE99E900C4737F /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DFA841DEE99E900C4737F /* ComposeViewController.xib */; };
+		0A6DFA8A1DEE9A7400C4737F /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DFA891DEE9A7400C4737F /* ComposeTitleView.swift */; };
+		0A6DFA8C1DEEA0F500C4737F /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DFA8B1DEEA0F500C4737F /* ComposeTextView.swift */; };
+		0A6DFA8E1DEED9CB00C4737F /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DFA8D1DEED9CB00C4737F /* PicPickerCollectionView.swift */; };
+		0A6DFA911DEEDDAB00C4737F /* PicPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DFA8F1DEEDDAB00C4737F /* PicPickerCell.swift */; };
+		0A6DFA921DEEDDAB00C4737F /* PicPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DFA901DEEDDAB00C4737F /* PicPickerCell.xib */; };
 		0A8986E51DEB521C00A0F46C /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986E21DEB521C00A0F46C /* OAuthViewController.swift */; };
 		0A8986E61DEB521C00A0F46C /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8986E31DEB521C00A0F46C /* OAuthViewController.xib */; };
 		0A8986E81DEB527000A0F46C /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986E71DEB527000A0F46C /* UserAccount.swift */; };
@@ -77,6 +84,13 @@
 		0638D1D6FA9DF1E7BF61D89E /* Pods-WBSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WBSwift/Pods-WBSwift.release.xcconfig"; sourceTree = "<group>"; };
 		0A2C89661DEAEA6B00A58C90 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		0A2C896D1DEAF83100A58C90 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		0A6DFA831DEE99E900C4737F /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		0A6DFA841DEE99E900C4737F /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		0A6DFA891DEE9A7400C4737F /* ComposeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		0A6DFA8B1DEEA0F500C4737F /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
+		0A6DFA8D1DEED9CB00C4737F /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		0A6DFA8F1DEEDDAB00C4737F /* PicPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCell.swift; sourceTree = "<group>"; };
+		0A6DFA901DEEDDAB00C4737F /* PicPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicPickerCell.xib; sourceTree = "<group>"; };
 		0A8986E21DEB521C00A0F46C /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		0A8986E31DEB521C00A0F46C /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		0A8986E71DEB527000A0F46C /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
@@ -166,6 +180,7 @@
 				04D55E6E1DE56630006113EC /* Main */,
 				04D55E6D1DE56630006113EC /* Home */,
 				04D55E6F1DE56630006113EC /* Message */,
+				0A6DFA821DEE997D00C4737F /* Compose */,
 				04D55E6C1DE56630006113EC /* Discover */,
 				04D55E701DE56630006113EC /* Profile */,
 				04D55E7F1DE5ABE4006113EC /* Tools */,
@@ -253,6 +268,36 @@
 				0A8986E41DEB521C00A0F46C /* Model */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		0A6DFA821DEE997D00C4737F /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				0A6DFA871DEE99FF00C4737F /* Controller */,
+				0A6DFA881DEE99FF00C4737F /* View */,
+				0A6DFA841DEE99E900C4737F /* ComposeViewController.xib */,
+				0A6DFA831DEE99E900C4737F /* ComposeViewController.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		0A6DFA871DEE99FF00C4737F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A6DFA881DEE99FF00C4737F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A6DFA891DEE9A7400C4737F /* ComposeTitleView.swift */,
+				0A6DFA8B1DEEA0F500C4737F /* ComposeTextView.swift */,
+				0A6DFA8D1DEED9CB00C4737F /* PicPickerCollectionView.swift */,
+				0A6DFA8F1DEEDDAB00C4737F /* PicPickerCell.swift */,
+				0A6DFA901DEEDDAB00C4737F /* PicPickerCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0A8986E11DEB521C00A0F46C /* Controller */ = {
@@ -414,9 +459,11 @@
 				0AEB452E1DEC399C00F681BC /* Null.storyboard in Resources */,
 				0A8986EF1DEBC27F00A0F46C /* WelcomeViewController.xib in Resources */,
 				0A8986E61DEB521C00A0F46C /* OAuthViewController.xib in Resources */,
+				0A6DFA861DEE99E900C4737F /* ComposeViewController.xib in Resources */,
 				04D55E611DE564FE006113EC /* Assets.xcassets in Resources */,
 				045A5E0A1DE5B9EA00054F57 /* Message.storyboard in Resources */,
 				045A5E0C1DE5B9F400054F57 /* Discover.storyboard in Resources */,
+				0A6DFA921DEEDDAB00C4737F /* PicPickerCell.xib in Resources */,
 				04D55E5F1DE564FE006113EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,8 +527,10 @@
 				0494C5271DE6931F00305213 /* TitleViewButton.swift in Sources */,
 				0494C52B1DE696D000305213 /* PopoverViewController.swift in Sources */,
 				0AEB451E1DEC241200F681BC /* User.swift in Sources */,
+				0A6DFA911DEEDDAB00C4737F /* PicPickerCell.swift in Sources */,
 				0AEB45301DEC39CC00F681BC /* BaseTableViewCell.swift in Sources */,
 				0A2C896E1DEAF83100A58C90 /* Common.swift in Sources */,
+				0A6DFA8C1DEEA0F500C4737F /* ComposeTextView.swift in Sources */,
 				04D55E911DE5B157006113EC /* UIButton-Extension.swift in Sources */,
 				0A8986EA1DEB57B600A0F46C /* UserAccountViewModel.swift in Sources */,
 				0AEB45231DEC393700F681BC /* HomeViewCell.swift in Sources */,
@@ -491,6 +540,7 @@
 				0494C5251DE68F0A00305213 /* UIBarButtonItem-Extension.swift in Sources */,
 				04D55E7C1DE599FE006113EC /* DiscoverViewController.swift in Sources */,
 				0AEB451C1DEC1AF100F681BC /* NSDate-Extension.swift in Sources */,
+				0A6DFA851DEE99E900C4737F /* ComposeViewController.swift in Sources */,
 				046DE8551DE7D12B00E829D3 /* LYPresentationController.swift in Sources */,
 				0AE6CE261DECA8F90072E1C4 /* PicCollectionView.swift in Sources */,
 				0A2C89671DEAEA6B00A58C90 /* NetworkTools.swift in Sources */,
@@ -498,12 +548,14 @@
 				0A8986E51DEB521C00A0F46C /* OAuthViewController.swift in Sources */,
 				0AEB45181DEC0DE900F681BC /* Status.swift in Sources */,
 				043D8DC61DE5E489004E7899 /* HomeViewController.swift in Sources */,
+				0A6DFA8E1DEED9CB00C4737F /* PicPickerCollectionView.swift in Sources */,
 				046DE8571DE7E26700E829D3 /* PopoverAnimator.swift in Sources */,
 				04D55E7A1DE599F1006113EC /* MessageViewController.swift in Sources */,
 				0AEB452D1DEC399C00F681BC /* BaseModel.swift in Sources */,
 				043D8DC21DE5E235004E7899 /* VistorView.swift in Sources */,
 				04D55E7E1DE59A09006113EC /* ProfileViewController.swift in Sources */,
 				04D55E721DE598E8006113EC /* MainViewController.swift in Sources */,
+				0A6DFA8A1DEE9A7400C4737F /* ComposeTitleView.swift in Sources */,
 				0AEB45281DEC399400F681BC /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

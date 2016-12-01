@@ -140,7 +140,7 @@ extension HomeViewCell {
         layout.itemSize = CGSizeMake(imageViewWH, imageViewWH)
         
         if count == 4 {
-            let picViewWH =  2 * imageViewWH + itemMargin
+            let picViewWH =  2 * imageViewWH + itemMargin + 1
             return CGSizeMake(picViewWH, picViewWH)
         }
         
