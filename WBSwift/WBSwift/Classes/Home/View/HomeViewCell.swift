@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import HYLabel
 
 private let edgeMargin : CGFloat = 15
 
@@ -32,11 +33,11 @@ class HomeViewCell: BaseTableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     
     /// 正文
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     /// 微博配图
     @IBOutlet weak var picView: PicCollectionView!
     /// 转发内容
-    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedContentLabel: HYLabel!
     /// 底部工具条
     @IBOutlet weak var bottomToolView: UIView!
     // 转发微博背景图
@@ -78,7 +79,7 @@ class HomeViewCell: BaseTableViewCell {
                 sourceLabel.text = nil
             }
             
-            contentLabel.text = viewModel.status?.text
+            contentLabel.attributedText = FindEmoticon.shareInstance.findEmoticonAttrString(viewModel.status?.text, font: contentLabel.font)
             
             let picViewSize = calculatePicViewSize(viewModel.picURLs.count)
             picViewWidthCons.constant = picViewSize.width
@@ -89,7 +90,8 @@ class HomeViewCell: BaseTableViewCell {
             if viewModel.status?.retweeted_status != nil {
                 if let retweetedContent = viewModel.status?.retweeted_status?.text,
                     let retweetedScreenName = viewModel.status?.retweeted_status?.user?.screen_name {
-                    retweetedContentLabel.text = "@" + "\(retweetedScreenName)" + ": " + retweetedContent
+                    let retweetedStatus = "@" + "\(retweetedScreenName)" + ": " + retweetedContent
+                    retweetedContentLabel.attributedText = FindEmoticon.shareInstance.findEmoticonAttrString(retweetedStatus, font: retweetedContentLabel.font)
                 }
                 retweetedBgView.hidden = false
                 
@@ -115,6 +117,48 @@ class HomeViewCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         contentLabelWidthCons.constant = UIScreen.mainScreen().bounds.width - 2 * edgeMargin
+        
+        // 监听@谁谁谁的点击
+        contentLabel.userTapHandler = { (label, user, range) in
+            print(label)
+            print(user)
+            print(range)
+        }
+        
+        // 监听链接的点击
+        contentLabel.linkTapHandler = { (label, link, range) in
+            print(label)
+            print(link)
+            print(range)
+        }
+        
+        // 监听话题的点击
+        contentLabel.topicTapHandler = { (label, topic, range) in
+            print(label)
+            print(topic)
+            print(range)
+        }
+        
+        // 监听@谁谁谁的点击
+        retweetedContentLabel.userTapHandler = { (label, user, range) in
+            print(label)
+            print(user)
+            print(range)
+        }
+        
+        // 监听链接的点击
+        retweetedContentLabel.linkTapHandler = { (label, link, range) in
+            print(label)
+            print(link)
+            print(range)
+        }
+        
+        // 监听话题的点击
+        retweetedContentLabel.topicTapHandler = { (label, topic, range) in
+            print(label)
+            print(topic)
+            print(range)
+        }
     }
 }
 // MARK: - 计算方法

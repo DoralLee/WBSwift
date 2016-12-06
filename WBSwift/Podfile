@@ -10,4 +10,5 @@ target 'WBSwift' do
   pod 'SDWebImage'
   pod 'SnapKit', '~> 0.22.0’
   pod 'MJRefresh'
+  pod 'HYLabel'
 end
