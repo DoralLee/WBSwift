@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ComposeViewController: UIViewController {
     // MARK: - 控件属性
@@ -79,7 +80,22 @@ extension ComposeViewController {
     }
     
     @objc private func composeButtonClick() {
-        print("composeButtonClick")
+        let status = composeTextVIew.getEmoticonString()
+        
+        let successCallBack = { (isSuccess:Bool) in
+            if isSuccess {
+                SVProgressHUD.showSuccessWithStatus("发送成功")
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                SVProgressHUD.showSuccessWithStatus("发送失败")
+            }
+        }
+    
+        if let image = images.first {
+            NetworkTools.shareInstance.postStatus(status, image: image, isSuccess:successCallBack)
+        } else {
+            NetworkTools.shareInstance.postStatus(status, isSuccess: successCallBack)
+        }
     }
     
     @objc private func keyboardWillChangeFrame(noti : NSNotification) {

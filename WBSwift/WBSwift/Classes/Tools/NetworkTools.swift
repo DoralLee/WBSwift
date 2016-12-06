@@ -89,4 +89,41 @@ extension NetworkTools {
             }
         }
     }
+    
+    /// 发送微博
+    func postStatus(status:String, isSuccess:((isSuccess:Bool) -> ())?) {
+        let urlString = "2/statuses/update.json"
+        let parameter = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!, "status":status]
+        request(.Post, URLString: urlString, parameters: parameter) { (result, error) in
+            print(error)
+            guard let success = isSuccess else {
+                return
+            }
+            if result != nil {
+                success(isSuccess: true)
+            } else {
+                success(isSuccess: false)
+            }
+        }
+    }
+    
+    /// 发送带一张图片的微博
+    func postStatus(status:String, image : UIImage, isSuccess:((isSuccess:Bool) -> ())?) {
+        let urlString = "2/statuses/upload.json"
+        let parameter = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!, "status":status]
+        POST(urlString, parameters: parameter, constructingBodyWithBlock: { (formData) in
+            if let imageData = UIImageJPEGRepresentation(image, 0.5) {
+                formData.appendPartWithFileData(imageData, name: "pic", fileName: "123.png", mimeType: "image/png")
+            }
+            }, progress: nil, success: { (_, _) in
+                if let success = isSuccess {
+                    success(isSuccess: true)
+                }
+            }) { (_, error) in
+                print(error)
+                if let success = isSuccess {
+                    success(isSuccess: false)
+                }
+        }
+    }
 }
