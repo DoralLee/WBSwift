@@ -17,6 +17,10 @@ class ComposeViewController: UIViewController {
     private lazy var titleView : ComposeTitleView = ComposeTitleView()
     private lazy var images : [UIImage] = [UIImage]()
     private var isSelectedImage : Bool = false
+    private lazy var emoticonVC :EmoticonController = EmoticonController {[weak self] (emoticon) in
+        self?.composeTextVIew.insertEmoticon(emoticon)
+        self?.textViewDidChange(self!.composeTextVIew)
+    }
     
     // MARK: - 约束
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
@@ -96,6 +100,15 @@ extension ComposeViewController {
         UIView.animateWithDuration(0.5) { 
             self.view.layoutIfNeeded()
         }
+    }
+    
+    @IBAction func emoticonBtnClick() {
+        // 1. 先取消第一响应
+        composeTextVIew.resignFirstResponder()
+        // 2. 切换键盘
+        composeTextVIew.inputView = composeTextVIew.inputView != nil ? nil : emoticonVC.view
+        // 3. 成为第一响应
+        composeTextVIew.becomeFirstResponder()
     }
     
     @objc private func addPicNotification() {
