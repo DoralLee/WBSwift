@@ -21,12 +21,13 @@ class PicCollectionView: UICollectionView {
         super.awakeFromNib()
         
         dataSource = self
+        delegate = self
     }
 }
 
 
-// MARK: - collectionview data source
-extension PicCollectionView : UICollectionViewDataSource {
+// MARK: - collectionview data source and delegate
+extension PicCollectionView : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picURLs.count
     }
@@ -35,6 +36,11 @@ extension PicCollectionView : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("picViewCellID", forIndexPath: indexPath) as! PicViewCell
         cell.picURL = picURLs[indexPath.row]
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let info = [PhotoBrowserIndexPathkey:indexPath, PhotoBrowserPicUrlsKey:picURLs]
+        NSNotificationCenter.defaultCenter().postNotificationName(PhotoBrowserDidSelectedCellKey, object: nil, userInfo: info)
     }
 }
 

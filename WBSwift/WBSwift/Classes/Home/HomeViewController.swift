@@ -42,8 +42,13 @@ class HomeViewController: BaseTableViewController {
         setupFooterRefresh()
         
         setupTipLabel()
+
+        setupNotification()
     }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }
 // MARK: - 设置UI界面
 extension HomeViewController {
@@ -90,6 +95,10 @@ extension HomeViewController {
         tipLabel.textAlignment = .Center
         tipLabel.hidden = true
     }
+    
+    private func setupNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.tapPicCollectionCellNoti(_:)), name: PhotoBrowserDidSelectedCellKey, object: nil)
+    }
 }
 // MARK: - 事件监听
 extension HomeViewController {
@@ -106,6 +115,19 @@ extension HomeViewController {
         
         self.presentViewController(popoverVC, animated: true, completion: nil)
         
+    }
+    
+    @objc private func tapPicCollectionCellNoti(noti:NSNotification) {
+        guard let indexPath = noti.userInfo![PhotoBrowserIndexPathkey] as? NSIndexPath else {
+            return
+        }
+        guard let picUrls = noti.userInfo![PhotoBrowserPicUrlsKey] as? [NSURL] else {
+            return
+        }
+        
+        let photoBrowserVC = PhotoBrwoserViewController(indexPath: indexPath, picUrls: picUrls)
+        
+        presentViewController(photoBrowserVC, animated: true, completion: nil)
     }
 }
 
