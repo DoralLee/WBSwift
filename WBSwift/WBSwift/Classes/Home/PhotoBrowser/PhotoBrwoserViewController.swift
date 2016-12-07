@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SVProgressHUD
 
 let kPhotoBrowserCollectionCellID = "kPhotoBrowserCollectionCellID"
 
@@ -34,6 +35,8 @@ class PhotoBrwoserViewController: BaseViewController {
         super.viewDidLoad()
         
         setupUI()
+        
+        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: false)
     }
     
     override func loadView() {
@@ -59,18 +62,38 @@ extension PhotoBrwoserViewController {
             make.size.equalTo(CGSizeMake(90, 32))
         }
         saveBtn.snp_makeConstraints { (make) in
-            make.right.equalTo(-20)
+            make.right.equalTo(-40)
             make.bottom.equalTo(closeBtn)
             make.size.equalTo(closeBtn)
         }
         
         closeBtn.addTarget(self, action: #selector(PhotoBrwoserViewController.closeBtnClick), forControlEvents: .TouchUpInside)
+        saveBtn.addTarget(self, action: #selector(PhotoBrwoserViewController.saveBtnClick), forControlEvents: .TouchUpInside)
     }
 }
-
+// MARK: - 事件监听
 extension PhotoBrwoserViewController {
     @objc private func closeBtnClick() {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @objc private func saveBtnClick() {
+        let cell = collectionView.visibleCells().first as! PhotoBrwoserCollectionViewCell
+        guard let image = cell.image else {
+            return
+        }
+        //- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(PhotoBrwoserViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc private func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo:AnyObject) {
+        var showInfo = ""
+        if error != nil {
+            showInfo = "保存失败"
+        } else {
+            showInfo = "保存成功"
+        }
+        SVProgressHUD.showInfoWithStatus(showInfo)
     }
 }
 // MARK: - collection view delegate and data source
@@ -88,6 +111,26 @@ extension PhotoBrwoserViewController : UICollectionViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension PhotoBrwoserViewController : PhotoBrowserAnimationDismissDelegate {
+    func dismissViewOfIndexPath() -> NSIndexPath {
+        let cell = collectionView.visibleCells().first!
+        return collectionView.indexPathForCell(cell)!
+    }
+    func dismissViewOfImageView() -> UIImageView {
+        let cell = collectionView.visibleCells().first as! PhotoBrwoserCollectionViewCell
+        let image = cell.image
+        
+        let imageView = UIImageView()
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true
+        
+        imageView.image = image
+        imageView.frame = cell.imageFrame
+        
+        return imageView
     }
 }
 

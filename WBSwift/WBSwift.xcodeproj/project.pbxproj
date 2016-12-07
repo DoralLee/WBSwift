@@ -55,6 +55,7 @@
 		0A8986EA1DEB57B600A0F46C /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986E91DEB57B600A0F46C /* UserAccountViewModel.swift */; };
 		0A8986EE1DEBC27F00A0F46C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8986EC1DEBC27F00A0F46C /* WelcomeViewController.swift */; };
 		0A8986EF1DEBC27F00A0F46C /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8986ED1DEBC27F00A0F46C /* WelcomeViewController.xib */; };
+		0AC1D1F11DF8059A0071023B /* PhotoBrowserAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1D1F01DF8059A0071023B /* PhotoBrowserAnimation.swift */; };
 		0AE6CE261DECA8F90072E1C4 /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE6CE251DECA8F90072E1C4 /* PicCollectionView.swift */; };
 		0AEB45181DEC0DE900F681BC /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB45171DEC0DE900F681BC /* Status.swift */; };
 		0AEB451C1DEC1AF100F681BC /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB451B1DEC1AF100F681BC /* NSDate-Extension.swift */; };
@@ -121,6 +122,7 @@
 		0A8986E91DEB57B600A0F46C /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		0A8986EC1DEBC27F00A0F46C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0A8986ED1DEBC27F00A0F46C /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		0AC1D1F01DF8059A0071023B /* PhotoBrowserAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimation.swift; sourceTree = "<group>"; };
 		0AE6CE251DECA8F90072E1C4 /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		0AEB45171DEC0DE900F681BC /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		0AEB451B1DEC1AF100F681BC /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				0A3E337A1DF7C71C00F48890 /* PhotoBrwoserViewController.swift */,
 				0A3E337C1DF7D08D00F48890 /* PhotoBrwoserCollectionViewCell.swift */,
 				0A3E337E1DF7D7AF00F48890 /* ProgressView.swift */,
+				0AC1D1F01DF8059A0071023B /* PhotoBrowserAnimation.swift */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				0A6DFA851DEE99E900C4737F /* ComposeViewController.swift in Sources */,
 				046DE8551DE7D12B00E829D3 /* LYPresentationController.swift in Sources */,
 				0A4EDF461DF66E9F00CE1BD7 /* UITextView-Extension.swift in Sources */,
+				0AC1D1F11DF8059A0071023B /* PhotoBrowserAnimation.swift in Sources */,
 				0AE6CE261DECA8F90072E1C4 /* PicCollectionView.swift in Sources */,
 				0A2C89671DEAEA6B00A58C90 /* NetworkTools.swift in Sources */,
 				04D55E5A1DE564FE006113EC /* AppDelegate.swift in Sources */,

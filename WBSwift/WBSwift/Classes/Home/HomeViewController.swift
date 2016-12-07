@@ -25,6 +25,7 @@ class HomeViewController: BaseTableViewController {
         self?.titleViewButton.selected = presented
     }
     lazy var tipLabel : UILabel = UILabel()
+    private lazy var photoBrowserAnimation = PhotoBrowserAnimation()
     
     // MARK: - 系统方法
     override func viewDidLoad() {
@@ -124,9 +125,14 @@ extension HomeViewController {
         guard let picUrls = noti.userInfo![PhotoBrowserPicUrlsKey] as? [NSURL] else {
             return
         }
+        let picCollectionView = noti.object as! PicCollectionView
         
         let photoBrowserVC = PhotoBrwoserViewController(indexPath: indexPath, picUrls: picUrls)
-        
+        photoBrowserVC.modalPresentationStyle = .Custom
+        photoBrowserVC.transitioningDelegate = photoBrowserAnimation
+        photoBrowserAnimation.presentedDelegate = picCollectionView
+        photoBrowserAnimation.dismissDelegate = photoBrowserVC
+        photoBrowserAnimation.indexPath = indexPath
         presentViewController(photoBrowserVC, animated: true, completion: nil)
     }
 }

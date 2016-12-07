@@ -18,6 +18,9 @@ class PhotoBrwoserCollectionViewCell: UICollectionViewCell {
             setupContent(picUrl)
         }
     }
+    var image :UIImage?
+    var imageFrame:CGRect = CGRectZero
+    
     
     var tapCallBack : (() -> ())?
     
@@ -73,7 +76,8 @@ extension PhotoBrwoserCollectionViewCell {
             }) { (_, _, _, _) in
                 self.progressView.hidden = true
         }
-        
+        self.image = imageView.image
+        self.imageFrame = imageView.frame
         scrollView.contentSize = CGSize(width: 0, height: imageViewH)
     }
     
